@@ -9,6 +9,8 @@ export default {
   // please see https://stripe.com/docs/elements/reference for details
   props: Object.assign({type: {type:String, required:true}}, props),
 
+  data: () => ({_element: null}),
+
   beforeMount () {
     this._element = create(this.type, this.stripe, this.options)
     this._element.on('blur', event => this.$emit('blur'))
