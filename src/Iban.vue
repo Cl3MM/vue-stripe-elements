@@ -1,11 +1,6 @@
 <template>
-</template>
-
-<!--
-<template>
-  <stripe-element
-    ref='element'
-    type='iban'
+  <div
+    :type='type'
     :stripe='stripe'
     :value='value'
     :options='options'
@@ -14,7 +9,7 @@
     @change='$emit("change", $event)'
   />
 </template>
--->
+
 <script>
 import Base from './Base'
 

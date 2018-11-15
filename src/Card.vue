@@ -1,4 +1,13 @@
 <template>
+  <div
+    :type='type'
+    :stripe='stripe'
+    :value='value'
+    :options='options'
+    @blur='$emit("blur")'
+    @focus='$emit("focus")'
+    @change='$emit("change", $event)'
+  />
 </template>
 
 <script>

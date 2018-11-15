@@ -1,3 +1,4 @@
+<!--
 <template>
   <div
     ref='element'
@@ -11,7 +12,7 @@
   >
   </div>
 </template>
-
+-->
 <script>
 import props from './props'
 import { create, destroy } from './stripeElements'
