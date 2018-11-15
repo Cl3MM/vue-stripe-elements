@@ -9,14 +9,9 @@ export default {
     validator: function(value) {
       // The value must match one of these strings
       return (
-        [
-          "iban",
-          "card",
-          "cardCvv",
-          "cardExpiry",
-          "cardNumber",
-          "postalCode"
-        ].indexOf(value) !== -1
+        ["iban", "card", "cardCvv", "cardExpiry", "cardNumber", "postalCode"]
+          .map(s => s.toLowerCase())
+          .indexOf(values.toLowerCase()) !== -1
       )
     }
   },

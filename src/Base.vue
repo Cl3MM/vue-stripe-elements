@@ -1,24 +1,12 @@
-<!--
-<template>
-  <div
-    ref='element'
-    :type='type'
-    :stripe='stripe'
-    :value='value'
-    :options='options'
-    @blur='$emit("blur")'
-    @focus='$emit("focus")'
-    @change='$emit("change", $event)'
-  >
-  </div>
-</template>
--->
 <script>
 import props from './props'
 import { create, destroy } from './stripeElements'
+import StripeElement from './StripeElement'
 
 export default {
   props,
+
+  components: { StripeElement },
 
   beforeMount () {
     this.stripeElement = create(this.type, this.stripe, this.options)

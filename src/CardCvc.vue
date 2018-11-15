@@ -1,8 +1,7 @@
-<!--
 <template>
   <stripe-element
     ref='element'
-    type='cardCvc'
+    :type=type
     :stripe='stripe'
     :value='value'
     :options='options'
@@ -11,7 +10,7 @@
     @change='$emit("change", $event)'
   />
 </template>
--->
+
 <script>
 import Base from './Base'
 

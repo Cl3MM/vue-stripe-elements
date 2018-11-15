@@ -1,6 +1,7 @@
 <template>
-  <div
-    :type='type'
+  <stripe-element
+    ref='element'
+    :type="type"
     :stripe='stripe'
     :value='value'
     :options='options'

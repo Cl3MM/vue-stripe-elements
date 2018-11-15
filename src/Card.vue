@@ -1,6 +1,7 @@
 <template>
-  <div
-    :type='type'
+  <stripe-element
+    ref='element'
+    :type="type"
     :stripe='stripe'
     :value='value'
     :options='options'
@@ -14,6 +15,6 @@
 import Base from './Base'
 
 export default {
-  Mixins: [Base],
+  Mixins: [Base]
 }
 </script>

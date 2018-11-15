@@ -7,9 +7,7 @@ import { create, destroy } from './stripeElements'
 
 export default {
   // please see https://stripe.com/docs/elements/reference for details
-  props: Object.assign({type: {type:String, required:true}}, props),
-
-  // data: () => ({stripeElement: null}),
+  props: props,
 
   beforeMount () {
     this.stripeElement = create(this.type, this.stripe, this.options)
