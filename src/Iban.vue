@@ -1,3 +1,4 @@
+<!--
 <template>
   <stripe-element
     ref='element'
@@ -10,19 +11,11 @@
     @change='$emit("change", $event)'
   />
 </template>
-
+-->
 <script>
-import props from './props'
-import StripeElement from './StripeElement'
+import Base from './Base'
 
 export default {
-  props,
-  components: { StripeElement },
-  methods: {
-    blur () { this.$refs.element.blur() },
-    clear () { this.$refs.element.clear() },
-    focus () { this.$refs.element.focus() },
-    update (options) { this.$refs.element.update(options) }
-  }
+  Mixins: [Base]
 }
 </script>

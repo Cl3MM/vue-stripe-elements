@@ -1,4 +1,15 @@
 <template>
+  <div
+    ref='element'
+    :type='type'
+    :stripe='stripe'
+    :value='value'
+    :options='options'
+    @blur='$emit("blur")'
+    @focus='$emit("focus")'
+    @change='$emit("change", $event)'
+  >
+  </div>
 </template>
 
 <script>
@@ -6,10 +17,7 @@ import props from './props'
 import { create, destroy } from './stripeElements'
 
 export default {
-  // please see https://stripe.com/docs/elements/reference for details
-  props: Object.assign({type: {type:String, required:true}}, props),
-
-  // data: () => ({stripeElement: null}),
+  props,
 
   beforeMount () {
     this.stripeElement = create(this.type, this.stripe, this.options)
@@ -27,16 +35,24 @@ export default {
   },
 
   beforeDestroy () {
-    this.stripeElement.unmount()
-    this.stripeElement.destroy()
+    if (this.stripeElement) {
+      this.stripeElement.unmount()
+      this.stripeElement.destroy()
+    }
     destroy()
   },
 
   methods: {
+    // blur () { this.$refs.element.blur() },
+    // clear () { this.$refs.element.clear() },
+    // focus () { this.$refs.element.focus() },
+    // update (options) { this.$refs.element.update(options) }
+
     blur () { this.stripeElement.blur() },
     clear () { this.stripeElement.clear() },
     focus () { this.stripeElement.focus() },
-    update () { this.stripeElement.update() }
+    update (opts) { this.stripeElement.update(opts) }
   }
 }
 </script>
+
